@@ -21,6 +21,8 @@ The MCP4802/4812/4822 devices are designed to interface directly with the Serial
 
 The CS pin must be held low for the duration of a write command. The write command consists of 16 bits and is used to configure the DAC’s control and data latches. Register 5-1 to Register 5-3 detail the input register that is used to configure and load the DACA and DACB registers for each device.
 
+![image](https://github.com/otaviocmaciel/DAC-MCP482x-VHDL-core/assets/93693421/039b77db-fb1e-4902-8b5a-2dff9fe0c195)
+
 ## Installation
 To clone the repository, use the following command in the terminal:
 ```bash
