@@ -45,7 +45,7 @@ The SPI core was fully developed by the user nematoli and is available at this l
 * I will add synchronous resets to prevent bugs from occurring.
 * I will transform mcpdactest.vhd into a component that can be used in any project for any DAC model.
 
-## Development Kit
+## FPGA Development Kit
 ![image](https://github.com/otaviocmaciel/DAC-MCP482x-VHDL-core/assets/93693421/1947d1e2-4602-40d2-8954-970e222e4a99)
 
 ## Cloning Repository
