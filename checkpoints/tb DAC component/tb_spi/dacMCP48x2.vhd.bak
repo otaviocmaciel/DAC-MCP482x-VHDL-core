@@ -1,0 +1,104 @@
+LIBRARY ieee;
+USE ieee.STD_LOGIC_1164.ALL; 
+
+entity dacMCP48x2 is
+PORT(
+    clk     : IN     STD_LOGIC;                             --system clock
+    cs	    : OUT    STD_logic;
+    sclk    : OUT    STD_LOGIC;                             --spi clock
+    mosi    : OUT    STD_LOGIC;                             --master out slave in
+    txA	    : IN     STD_LOGIC_VECTOR(11 DOWNTO 0);  --data to transmit to DAC1
+    txB     : IN     STD_LOGIC_VECTOR(11 DOWNTO 0);   --data to transmit to DAC2
+    DACSel  : IN     std_logic;-- 0 seleciona DAC1 e 1 seleciona DAC2
+    DACGain : IN     std_logic; -- Seleciona o ganho do DAC
+    SHDN    : IN     std_logic; -- 1 ativa o DAC selecionado, 0 desliga
+    START   : IN     std_logic
+);
+end dacMCP48x2;
+
+architecture hardware of dacMCP48x2 is
+
+COMPONENT spi
+    	PORT(
+        	clk 		: IN  STD_LOGIC;
+        	reset_n 	: IN  STD_LOGIC;
+        	enable 		: IN  STD_LOGIC;
+		cpol    	: IN  STD_LOGIC;
+		cpha    	: IN  STD_LOGIC;
+		miso		: IN  STD_LOGIC;
+        	sclk 		: OUT STD_LOGIC;
+        	ss_n 		: OUT STD_LOGIC;
+        	mosi 		: OUT STD_LOGIC;
+        	busy 		: OUT STD_LOGIC;
+        	tx 		: IN  STD_LOGIC_VECTOR(15 downto 0);
+        	rx 		: OUT STD_LOGIC_VECTOR(15 downto 0)
+       		);
+END COMPONENT;
+
+-- Sinais para utilizar no SPI
+SIGNAL TX : STD_LOGIC_VECTOR(15 downto 0);
+SIGNAL ENABLE : std_logic;
+SIGNAL RX_ENABLE : std_logic := '1';
+SIGNAL BUSY : std_logic;
+SIGNAL reset_n : std_logic := '0';
+SIGNAL rx_master, rx_slave: STD_LOGIC_VECTOR(15 downto 0);
+SIGNAL CPHA :STD_LOGIC := '0';
+SIGNAL CPOL :STD_LOGIC := '0';
+SIGNAL MISO : std_logic;
+
+
+SIGNAL BufferTX : STD_LOGIC_VECTOR(15 downto 0);
+
+TYPE StateMachine_DAC is (IDLE, TRANSMIT, WAITING);
+SIGNAL State_DAC : StateMachine_DAC;
+
+begin
+
+process(CLK)
+begin
+if(falling_edge(CLK) then
+	CASE State_DAC is
+
+		When IDLE =>
+		reset_n <= '0';
+		if(DACSel = '0') then
+			BufferTX <= '0' & '0' & DACGain & SHDN & txA;
+		elsif(DACSel = '1') then
+			BufferTX <= '1' & '0' & DACGain & SHDN & txA;
+		end if;
+		if(START = '1') then
+			State_DAC <= TRANSMIT;
+		end if;
+		When TRANSMIT =>
+			reset_n <= '1';
+			TX <= BufferTX;
+			ENABLE <= '1';
+			if(BUSY = '1') then
+				State_DAC <= WAITING;
+			end if;
+
+		When WAITING =>
+			if(BUSY = '0') then
+				State_DAC <= IDLE;
+			end if;
+
+	END CASE;
+end if;
+end process;
+
+SPI1 : spi port map(
+       		clk		=> clk,
+        	reset_n		=> reset_n,
+        	enable 		=> ENABLE,
+		cpol    	=> CPOL,
+		cpha    	=> CPHA,
+		miso		=> MISO,
+        	sclk 		=> sclk,
+        	ss_n 		=> cs,
+        	mosi 		=> mosi,
+        	busy 		=> BUSY,
+        	tx 		=> TX,
+        	rx 		=> open
+);
+end hardware;
+

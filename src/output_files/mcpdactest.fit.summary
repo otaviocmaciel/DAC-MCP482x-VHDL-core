@@ -1,0 +1,16 @@
+Fitter Status : Successful - Sat May 18 13:44:10 2024
+Quartus Prime Version : 22.1std.1 Build 917 02/14/2023 SC Lite Edition
+Revision Name : mcpdactest
+Top-level Entity Name : mcpdactest
+Family : Cyclone IV E
+Device : EP4CE6E22C8
+Timing Models : Final
+Total logic elements : 921 / 6,272 ( 15 % )
+    Total combinational functions : 903 / 6,272 ( 14 % )
+    Dedicated logic registers : 136 / 6,272 ( 2 % )
+Total registers : 136
+Total pins : 5 / 92 ( 5 % )
+Total virtual pins : 0
+Total memory bits : 0 / 276,480 ( 0 % )
+Embedded Multiplier 9-bit elements : 0 / 30 ( 0 % )
+Total PLLs : 0 / 2 ( 0 % )

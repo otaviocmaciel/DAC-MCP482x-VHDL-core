@@ -1,0 +1,215 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dD:/intelFPGA/18.1
+Edacmcp48x2
+Z0 w1715964610
+Z1 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z2 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+Z3 dG:/My Drive/FPGA/spi/tb_spi
+Z4 8G:\My Drive\FPGA\spi\tb_spi\dacMCP48x2.vhd
+Z5 FG:\My Drive\FPGA\spi\tb_spi\dacMCP48x2.vhd
+l0
+L4
+V<UF2PW_V?XgN>CzD4IVi>2
+!s100 ]N4E5XT<:<GNT=YagQmGb1
+Z6 OV;C;10.5b;63
+32
+Z7 !s110 1715964613
+!i10b 1
+Z8 !s108 1715964613.000000
+Z9 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|G:\My Drive\FPGA\spi\tb_spi\dacMCP48x2.vhd|
+Z10 !s107 G:\My Drive\FPGA\spi\tb_spi\dacMCP48x2.vhd|
+!i113 1
+Z11 o-work work -2002 -explicit
+Z12 tExplicit 1 CvgOpt 0
+Ahardware
+R1
+R2
+Z13 DEx4 work 10 dacmcp48x2 0 22 <UF2PW_V?XgN>CzD4IVi>2
+l47
+L18
+Von36]9828ZNjn06elS^7W1
+!s100 JT31c4Q?I[116>D6@h>L12
+R6
+32
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Espi
+Z14 w1715958591
+Z15 DPx4 ieee 18 std_logic_unsigned 0 22 ;eZjO2D4ZDz<]0>8AL<ne1
+Z16 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
+R1
+R2
+R3
+Z17 8G:\My Drive\FPGA\spi\tb_spi\spi.vhd
+Z18 FG:\My Drive\FPGA\spi\tb_spi\spi.vhd
+l0
+L6
+VE8YZFcXaOPnX]VjCH;nWJ3
+!s100 9fK3:NHTYS3kJTL6dikO63
+R6
+32
+R7
+!i10b 1
+R8
+Z19 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|G:\My Drive\FPGA\spi\tb_spi\spi.vhd|
+Z20 !s107 G:\My Drive\FPGA\spi\tb_spi\spi.vhd|
+!i113 1
+R11
+R12
+Abehavioural
+R15
+R16
+R1
+R2
+DEx4 work 3 spi 0 22 E8YZFcXaOPnX]VjCH;nWJ3
+l36
+L24
+Vm5X2N2S?V5XS8R>S@9c@G0
+!s100 BMUNE5TmzG6?242fX8>D33
+R6
+32
+R7
+!i10b 1
+R8
+R19
+R20
+!i113 1
+R11
+R12
+Espi_master
+Z21 w1715956963
+R15
+R16
+R1
+R2
+R3
+R17
+R18
+l0
+L6
+VQ[k7Jm18FIo;hXnh:m[^D1
+!s100 cDCek7DPKVaj[XFPeU6Hi3
+R6
+32
+Z22 !s110 1715957899
+!i10b 1
+Z23 !s108 1715957899.000000
+R19
+R20
+!i113 1
+R11
+R12
+Abehavioural
+R15
+R16
+R1
+R2
+DEx4 work 10 spi_master 0 22 Q[k7Jm18FIo;hXnh:m[^D1
+l36
+L24
+V8kgOSel]9?KNJ3XWUIaQY2
+!s100 b;fImOGh;@7NIUQ2Zj8ET2
+R6
+32
+R22
+!i10b 1
+R23
+R19
+R20
+!i113 1
+R11
+R12
+Espi_tb
+Z24 w1715957895
+Z25 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+R1
+R2
+R3
+Z26 8G:\My Drive\FPGA\spi\tb_spi\tb_spi.vhd
+Z27 FG:\My Drive\FPGA\spi\tb_spi\tb_spi.vhd
+l0
+L5
+V@o[gl`LCPAMdafo?3Xe`G2
+!s100 EDMNcVUM6OIb=]1Ghc<mZ0
+R6
+32
+R7
+!i10b 1
+R8
+Z28 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|G:\My Drive\FPGA\spi\tb_spi\tb_spi.vhd|
+Z29 !s107 G:\My Drive\FPGA\spi\tb_spi\tb_spi.vhd|
+!i113 1
+R11
+R12
+Abehavior
+R25
+R1
+R2
+DEx4 work 6 spi_tb 0 22 @o[gl`LCPAMdafo?3Xe`G2
+l45
+L8
+V4A4lO@=RaK_?d44YkQVFa1
+!s100 dPIC3>]jT:?_MiaKOnhJX0
+R6
+32
+R7
+!i10b 1
+R8
+R28
+R29
+!i113 1
+R11
+R12
+Etb_spi
+Z30 w1715956611
+R1
+R2
+R3
+R26
+R27
+l0
+L4
+VC@KDMDHiYJ0FHW?O<n[`70
+!s100 J55j`gfcb:LFV>@0TTb272
+R6
+32
+Z31 !s110 1715956612
+!i10b 1
+Z32 !s108 1715956612.000000
+R28
+R29
+!i113 1
+R11
+R12
+Ahardware
+R1
+R2
+DEx4 work 6 tb_spi 0 22 C@KDMDHiYJ0FHW?O<n[`70
+l8
+L7
+Vn5NCi`GTj3LV?C[VMjV7:3
+!s100 0d_5KcgL5cVRzbd7[GohY2
+R6
+32
+R31
+!i10b 1
+R32
+R28
+R29
+!i113 1
+R11
+R12
