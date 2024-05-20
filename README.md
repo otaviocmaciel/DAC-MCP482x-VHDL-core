@@ -35,6 +35,8 @@ DAC-A Channel at 1kHz and DAC-B 1kHz (90 degrees phase shift between the channel
 DAC-A Channel at 1kHz and DAC-B 1kHz (90 degrees phase shift between the channels)
 ![F0021TEK](https://github.com/otaviocmaciel/DAC-MCP482x-VHDL-core/assets/93693421/1031b170-0775-4492-a976-10f079ca990b)
 
+To generate different frequencies, in one channel I traversed the array step by step for the 1kHz channel, and in the other channel, I traversed the array in steps of 20. In this case, I reduce the continuity of the signal but increase its frequency without necessarily having to increase the number of packets sent through the SPI.
+
 ## SPI Core VHDL
 The SPI core was fully developed by the user nematoli and is available at this link: https://github.com/nematoli/SPI-FPGA-VHDL
 
@@ -43,7 +45,7 @@ The SPI core was fully developed by the user nematoli and is available at this l
 * I will add synchronous resets to prevent bugs from occurring.
 * I will transform mcpdactest.vhd into a component that can be used in any project for any DAC model.
 
-## Installation
+## Cloning Repository
 To clone the repository, use the following command in the terminal:
 ```bash
 git clone https://github.com/otaviocmaciel/DAC-MCP482x-VHDL-core.git
