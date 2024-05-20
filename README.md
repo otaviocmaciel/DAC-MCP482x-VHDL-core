@@ -32,7 +32,7 @@ In the mcpdactest.vhd file, you will notice that I created an array storing the 
 DAC-A Channel at 1kHz and DAC-B 1kHz (90 degrees phase shift between the channels)
 ![F0019TEK](https://github.com/otaviocmaciel/DAC-MCP482x-VHDL-core/assets/93693421/f437e005-932b-4b58-967c-ac644f371e15)
 
-DAC-A Channel at 1kHz and DAC-B 1kHz (90 degrees phase shift between the channels)
+DAC-A Channel at 20kHz and DAC-B 1kHz
 ![F0021TEK](https://github.com/otaviocmaciel/DAC-MCP482x-VHDL-core/assets/93693421/1031b170-0775-4492-a976-10f079ca990b)
 
 To generate different frequencies, in one channel I traversed the array step by step for the 1kHz channel, and in the other channel, I traversed the array in steps of 20. In this case, I reduce the continuity of the signal but increase its frequency without necessarily having to increase the number of packets sent through the SPI.
