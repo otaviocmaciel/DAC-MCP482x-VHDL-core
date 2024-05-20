@@ -54,3 +54,6 @@ The SPI core was fully developed by the user nematoli and is available at this l
 To clone the repository, use the following command in the terminal:
 ```bash
 git clone https://github.com/otaviocmaciel/DAC-MCP482x-VHDL-core.git
+
+## References
+- [MCP482x Documentation](http://ww1.microchip.com/downloads/en/DeviceDoc/20002249B.pdf)
