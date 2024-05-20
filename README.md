@@ -24,6 +24,20 @@ The CS pin must be held low for the duration of a write command. The write comma
 ![image](https://github.com/otaviocmaciel/DAC-MCP482x-VHDL-core/assets/93693421/039b77db-fb1e-4902-8b5a-2dff9fe0c195)
 ![image](https://github.com/otaviocmaciel/DAC-MCP482x-VHDL-core/assets/93693421/c31e0c8c-61ac-444c-8dc2-3e9b7d5eb75d)
 
+# Results
+As mentioned, the tests were conducted using an MCP4822. The maximum SPI clock for this device is 20MHz. For the tests, a Cyclone IV EP4CE6E22C8 embedded in a development kit was used, which has a 50MHz crystal onboard. Therefore, to perform tests without major concerns about optimizing the write time, I chose to divide the clock by 4, resulting in a 12.5MHz clock for the SPI. However, if you are going to use this core, it might be interesting to use a PLL to generate a 40MHz frequency for the SPI component (spi.vhd). The SPI component will divide the clock by 2 and will name the signal sclk, in which case you will have a clock equal to the maximum allowed of 20MHz.
+
+In the mcpdactest.vhd file, you will notice that I created an array storing the 360 values of a sine function. I used MATLAB to generate the array as well as to convert it to binary. I did not worry about the use of LUT4 in the FPGA, so I stored the values as an array of std_logic_vector (just for testing purposes). Without the array, the total use of logic elements was around 100, so I believe it is possible to incorporate this core into a simple CPLD (EPM240 or EPM570).
+
+
+![F0021TEK](https://github.com/otaviocmaciel/DAC-MCP482x-VHDL-core/assets/93693421/1031b170-0775-4492-a976-10f079ca990b)
+
+![F0019TEK](https://github.com/otaviocmaciel/DAC-MCP482x-VHDL-core/assets/93693421/f437e005-932b-4b58-967c-ac644f371e15)
+
+
+
+## SPI Core VHDL
+The SPI core was fully developed by the user nematoli and is available at this link: https://github.com/nematoli/SPI-FPGA-VHDL
 
 ## Installation
 To clone the repository, use the following command in the terminal:
