@@ -30,9 +30,11 @@ As mentioned, the tests were conducted using an MCP4822. The maximum SPI clock f
 In the mcpdactest.vhd file, you will notice that I created an array storing the 360 values of a sine function. I used MATLAB to generate the array as well as to convert it to binary. I did not worry about the use of LUT4 in the FPGA, so I stored the values as an array of std_logic_vector (just for testing purposes). Without the array, the total use of logic elements was around 100, so I believe it is possible to incorporate this core into a simple CPLD (EPM240 or EPM570).
 
 * DAC-A Channel at 1kHz and DAC-B 1kHz (90 degrees phase shift between the channels)
+
 ![F0019TEK](https://github.com/otaviocmaciel/DAC-MCP482x-VHDL-core/assets/93693421/f437e005-932b-4b58-967c-ac644f371e15)
 
 * DAC-A Channel at 20kHz and DAC-B 1kHz
+
 ![F0021TEK](https://github.com/otaviocmaciel/DAC-MCP482x-VHDL-core/assets/93693421/1031b170-0775-4492-a976-10f079ca990b)
 
 To generate different frequencies, in one channel I traversed the array step by step for the 1kHz channel, and in the other channel, I traversed the array in steps of 20. In this case, I reduce the continuity of the signal but increase its frequency without necessarily having to increase the number of packets sent through the SPI.
