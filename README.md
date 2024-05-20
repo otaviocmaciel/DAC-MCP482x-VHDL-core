@@ -29,15 +29,19 @@ As mentioned, the tests were conducted using an MCP4822. The maximum SPI clock f
 
 In the mcpdactest.vhd file, you will notice that I created an array storing the 360 values of a sine function. I used MATLAB to generate the array as well as to convert it to binary. I did not worry about the use of LUT4 in the FPGA, so I stored the values as an array of std_logic_vector (just for testing purposes). Without the array, the total use of logic elements was around 100, so I believe it is possible to incorporate this core into a simple CPLD (EPM240 or EPM570).
 
-
-![F0021TEK](https://github.com/otaviocmaciel/DAC-MCP482x-VHDL-core/assets/93693421/1031b170-0775-4492-a976-10f079ca990b)
-
+DAC-A Channel at 1kHz and DAC-B 1kHz (90 degrees phase shift between the channels)
 ![F0019TEK](https://github.com/otaviocmaciel/DAC-MCP482x-VHDL-core/assets/93693421/f437e005-932b-4b58-967c-ac644f371e15)
 
-
+DAC-A Channel at 1kHz and DAC-B 1kHz (90 degrees phase shift between the channels)
+![F0021TEK](https://github.com/otaviocmaciel/DAC-MCP482x-VHDL-core/assets/93693421/1031b170-0775-4492-a976-10f079ca990b)
 
 ## SPI Core VHDL
 The SPI core was fully developed by the user nematoli and is available at this link: https://github.com/nematoli/SPI-FPGA-VHDL
+
+## Future Improvements
+* I intend to further optimize the code, making it more general-purpose. 
+* I will add synchronous resets to prevent bugs from occurring.
+* I will transform mcpdactest.vhd into a component that can be used in any project for any DAC model.
 
 ## Installation
 To clone the repository, use the following command in the terminal:
