@@ -19,10 +19,7 @@ This project implements a VHDL core for the MCP482x Digital-to-Analog Converter 
 
 The MCP4802/4812/4822 devices are designed to interface directly with the Serial Peripheral Interface (SPI) port, available on many microcontrollers, and support Mode 0,0 and Mode 1,1. Commands and data are sent to the device via the SDI pin, with data being clocked-in on the rising edge of SCK. The communications are unidirectional and, thus, data cannot be read out of the MCP4802/4812/4822 devices.
 
-The CS pin must be held low for the duration of a write command. The write command consists of 16 bits and is used to configure the DAC’s control and data latches. Register 5-1 to Register 5-3 detail the input register that is used to configure and load the DACA and DACB registers for each device. Figure 5-1 to Figure 5-3 show the write command for each device.
-
-Refer to Figure 1-1 and SPI Timing Specifications Table for detailed input and output timing specifications for both Mode 0,0 and Mode 1,1 operation.
-Você pode adicionar esta seção ao seu README.md em um lugar apropriado, talvez logo após a 
+The CS pin must be held low for the duration of a write command. The write command consists of 16 bits and is used to configure the DAC’s control and data latches. Register 5-1 to Register 5-3 detail the input register that is used to configure and load the DACA and DACB registers for each device.
 
 ## Installation
 To clone the repository, use the following command in the terminal:
