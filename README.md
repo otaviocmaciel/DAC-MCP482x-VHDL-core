@@ -11,6 +11,11 @@ This project implements a VHDL core for the MCP482x Digital-to-Analog Converter 
 
 ![image](https://github.com/otaviocmaciel/DAC-MCP482x-VHDL-core/assets/93693421/0ca4b8a5-452b-46b2-a752-d8c086b3159e)
 
+## Block Diagram
+
+![image](https://github.com/otaviocmaciel/DAC-MCP482x-VHDL-core/assets/93693421/48a41e25-2c3b-4c11-bcb6-29ea5089c680)
+
+
 ## Installation
 To clone the repository, use the following command in the terminal:
 ```bash
