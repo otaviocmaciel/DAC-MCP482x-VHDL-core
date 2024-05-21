@@ -58,3 +58,4 @@ git clone https://github.com/otaviocmaciel/DAC-MCP482x-VHDL-core.git
 ## References
 - [MCP482x Documentation](http://ww1.microchip.com/downloads/en/DeviceDoc/20002249B.pdf)
 - [SPI Core VHDL by nematoli](https://github.com/nematoli/SPI-FPGA-VHDL)
+- [EP4CE6E22C8 Specifications](https://www.intel.com.br/content/www/br/pt/products/sku/210472/cyclone-iv-ep4ce6-fpga/specifications.html)
